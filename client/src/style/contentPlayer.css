@@ -1,0 +1,1491 @@
+:root {
+  --cp-bg: #f7f9fc;
+  --cp-card: #ffffff;
+  --cp-muted: #6b7280;
+  --cp-accent: #7c3aed;
+  --cp-accent-light: #8b5cf6;
+  --cp-accent-2: #2563eb;
+  --cp-success: #10b981;
+  --cp-danger: #ef4444;
+  --cp-warning: #f59e0b;
+  --cp-info: #0ea5e9;
+  --cp-radius: 16px;
+  --cp-shadow: 0 10px 30px rgba(16, 24, 40, 0.08);
+  --cp-shadow-lg: 0 20px 60px rgba(16, 24, 40, 0.12);
+  --cp-glass: rgba(255, 255, 255, 0.7);
+  --cp-gap: 20px;
+  font-family: "Segoe UI", "Noto Sans Arabic", "Cairo", sans-serif;
+}
+
+/* ===== CONTAINER ===== */
+.cp-container {
+  direction: rtl;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  padding: 32px;
+  min-height: 100vh;
+  color: #0f172a;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.cp-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.05) 0%, rgba(37, 99, 235, 0.02) 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
+  z-index: 0;
+}
+
+/* ===== BACK BUTTON ===== */
+.cp-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.9));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  color: #475569;
+  padding: 12px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-bottom: 24px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  position: relative;
+  z-index: 1;
+}
+
+.cp-back-btn:hover {
+  transform: translateX(-4px);
+  background: white;
+  border-color: var(--cp-accent-light);
+  color: var(--cp-accent);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.12);
+}
+
+.cp-back-btn:active {
+  transform: translateX(-2px);
+}
+
+.cp-back-btn i {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.cp-back-btn:hover i {
+  transform: translateX(2px);
+}
+
+/* ===== COURSE HEADER ===== */
+.cp-header {
+  background: var(--cp-glass);
+  backdrop-filter: blur(20px);
+  padding: 28px;
+  border-radius: var(--cp-radius);
+  box-shadow: var(--cp-shadow);
+  margin-bottom: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.cp-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(37, 99, 235, 0.03));
+  z-index: -1;
+}
+
+.cp-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--cp-accent), var(--cp-accent-2));
+  border-radius: 0 4px 4px 0;
+}
+
+.cp-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.cp-title {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1.3;
+  background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  flex: 1;
+  min-width: 200px;
+}
+
+.cp-fav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  border: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.9));
+  cursor: pointer;
+  color: #94a3b8;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 24px rgba(2, 6, 23, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.cp-fav-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--cp-accent), var(--cp-accent-2));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cp-fav-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 16px 40px rgba(124, 58, 237, 0.15);
+  color: var(--cp-accent);
+}
+
+.cp-fav-btn.favorited {
+  color: #ef4444;
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  animation: cp-heart-pop 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cp-fav-btn.favorited::before {
+  opacity: 0;
+}
+
+.cp-fav-btn i {
+  font-size: 22px;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+@keyframes cp-heart-pop {
+  0% { transform: scale(0.8); }
+  25% { transform: scale(1.15); }
+  50% { transform: scale(0.95); }
+  75% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.cp-instructor {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  color: #64748b;
+  margin-bottom: 12px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+}
+
+.cp-instructor i {
+  color: var(--cp-accent);
+  font-size: 18px;
+}
+
+.cp-stats {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cp-stat-item {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 18px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  color: #475569;
+  font-weight: 600;
+  font-size: 15px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.cp-stat-item:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.cp-stat-item i {
+  color: var(--cp-accent);
+  font-size: 16px;
+}
+
+/* ===== MAIN CONTENT LAYOUT ===== */
+.cp-main {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.cp-content-wrapper {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ===== CONTENT PLAYER SECTION ===== */
+.cp-player-section {
+  background: white;
+  padding: 15px;
+  border-radius: var(--cp-radius);
+  box-shadow: var(--cp-shadow-lg);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  position: relative;
+  overflow: hidden;
+}
+
+.cp-player-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, var(--cp-accent), var(--cp-accent-2));
+}
+
+.cp-video-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+  margin-bottom: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.cp-video-wrapper video,
+.cp-video-wrapper .plyr {
+  width: 100%;
+  height: auto;
+  min-height: 500px;
+  max-height: 650px;
+  border-radius: 8px;
+}
+
+/* Plyr Customization */
+.cp-video-wrapper .plyr {
+  --plyr-color-main: var(--cp-accent);
+  --plyr-control-hover: var(--cp-accent-light);
+  --plyr-menu-background: white;
+  --plyr-time-color: white;
+  --plyr-font-family: inherit;
+  border-radius: 8px;
+}
+
+.plyr--full-ui input[type="range"] {
+  color: var(--cp-accent);
+}
+
+.plyr__control--overlaid {
+  background: var(--cp-accent);
+  padding: 28px;
+}
+
+.plyr__control--overlaid:hover {
+  background: var(--cp-accent-light);
+}
+
+/* PDF Viewer */
+.cp-pdf-wrapper {
+  width: 100%;
+  height: 700px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  margin-bottom: 24px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.cp-pdf-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: white;
+}
+
+/* Image Viewer */
+.cp-image-wrapper {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.cp-image {
+  max-width: 100%;
+  max-height: 600px;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  object-fit: contain;
+  background: white;
+  padding: 4px;
+  border: 1px solid #e2e8f0;
+}
+
+/* Content Types */
+.cp-unsupported-content,
+.cp-video-error,
+.cp-quiz-wrapper,
+.cp-section-container {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  padding: 60px 40px;
+  border-radius: 16px;
+  text-align: center;
+  border: 2px dashed #cbd5e1;
+  margin: 24px 0;
+}
+
+.cp-video-error i,
+.cp-unsupported-content i,
+.cp-quiz-wrapper i,
+.cp-section-container i {
+  font-size: 64px;
+  margin-bottom: 24px;
+  opacity: 0.8;
+}
+
+.cp-quiz-wrapper h2,
+.cp-section-container h2 {
+  color: #1e293b;
+  margin-bottom: 16px;
+  font-size: 28px;
+}
+
+/* ===== PROGRESS SECTION ===== */
+.cp-progress-section {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  padding: 24px;
+  border-radius: 16px;
+  margin-top: 24px;
+  border: 1px solid #bae6fd;
+}
+
+.cp-progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.cp-progress-info span:first-child {
+  font-weight: 700;
+  color: #0369a1;
+  font-size: 18px;
+}
+
+.cp-progress-info span:last-child {
+  font-weight: 800;
+  color: var(--cp-accent);
+  font-size: 24px;
+  background: linear-gradient(135deg, var(--cp-accent), var(--cp-accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cp-progress-bar {
+  width: 100%;
+  height: 12px;
+  background: rgba(2, 132, 199, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.cp-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--cp-accent), var(--cp-accent-2));
+  border-radius: 6px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.cp-progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3));
+}
+
+/* ===== SIDEBAR ===== */
+.cp-sidebar {
+  width: 380px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cp-lessons-card {
+  background: white;
+  padding: 28px;
+  border-radius: var(--cp-radius);
+  box-shadow: var(--cp-shadow-lg);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.cp-lesson-counter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.cp-lesson-counter span:first-child {
+  font-weight: 800;
+  color: #1e293b;
+  font-size: 20px;
+}
+
+.cp-lesson-counter span:last-child {
+  color: var(--cp-accent);
+  font-weight: 700;
+  padding: 6px 16px;
+  background: rgba(124, 58, 237, 0.1);
+  border-radius: 20px;
+}
+
+/* ===== LESSONS LIST ===== */
+.cp-lessons-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 600px;
+  overflow-y: auto;
+  padding: 4px;
+}
+
+.cp-lessons-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cp-lessons-list::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.cp-lessons-list::-webkit-scrollbar-thumb {
+  background: var(--cp-accent);
+  border-radius: 3px;
+}
+
+.cp-lesson-item {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.cp-lesson-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--cp-accent-light);
+  box-shadow: 0 16px 40px rgba(124, 58, 237, 0.12);
+}
+
+.cp-lesson-item.active {
+  border-color: var(--cp-accent);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+.cp-lesson-item.has-quiz {
+  border-right: 4px solid #8b5cf6;
+}
+
+.cp-lesson-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background: transparent;
+  border: 0;
+  padding: 20px;
+  text-align: right;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.cp-lesson-header:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+  border-radius: 10px;
+}
+
+.cp-lesson-header-content {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.cp-lesson-number {
+  min-width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--cp-accent), var(--cp-accent-2));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.2);
+  flex-shrink: 0;
+}
+
+.cp-lesson-number.completed {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.cp-lesson-info {
+  text-align: right;
+  flex: 1;
+}
+
+.cp-lesson-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: #1e293b;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cp-free-badge {
+  background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+  color: #0369a1;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.cp-quiz-label {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: white;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+}
+
+.cp-lesson-meta {
+  margin: 8px 0 0 0;
+  color: #64748b;
+  font-size: 14px;
+  display: flex;
+  gap: 12px;
+}
+
+.cp-lesson-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cp-playing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cp-playing-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--cp-accent);
+  border-radius: 50%;
+  animation: cp-pulse 1.5s infinite;
+}
+
+@keyframes cp-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.cp-chevron {
+  color: #94a3b8;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.cp-chevron.rotated {
+  transform: rotate(180deg);
+}
+
+/* ===== SUB-LESSONS ===== */
+.cp-lesson-content {
+  padding: 0 20px 20px 20px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.cp-sub-lessons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cp-sub-lesson {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.cp-sub-lesson:hover {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(37, 99, 235, 0.02));
+  transform: translateX(-4px);
+  border-color: rgba(124, 58, 237, 0.1);
+}
+
+.cp-sub-lesson.active {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(37, 99, 235, 0.05));
+  border-color: var(--cp-accent-light);
+}
+
+.cp-sub-lesson.quiz-item {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(124, 58, 237, 0.02));
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.cp-sub-info {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.cp-sub-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(37, 99, 235, 0.05));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cp-accent);
+  font-size: 16px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.cp-sub-icon.completed {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.05));
+  color: #10b981;
+}
+
+.cp-quiz-mini {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.cp-sub-name {
+  font-weight: 700;
+  color: #334155;
+  font-size: 15px;
+}
+
+.cp-sub-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* ===== TEACHER CARD ===== */
+.cp-teacher-card {
+  background: white;
+  padding: 24px;
+  border-radius: var(--cp-radius);
+  box-shadow: var(--cp-shadow);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.cp-teacher-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.cp-teacher-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cp-accent);
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.cp-teacher-info {
+  flex: 1;
+}
+
+.cp-teacher-label {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.cp-teacher-name {
+  font-weight: 800;
+  color: #1e293b;
+  font-size: 20px;
+  background: linear-gradient(135deg, #0f172a, #334155);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== EMPTY STATES ===== */
+.cp-empty-lessons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 40px 20px;
+  color: #94a3b8;
+  text-align: center;
+}
+
+.cp-empty-lessons i {
+  font-size: 48px;
+  opacity: 0.5;
+}
+
+/* ===== BUTTONS ===== */
+.cp-open-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 14px;
+  border: 0;
+  background: linear-gradient(135deg, var(--cp-accent), var(--cp-accent-2));
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+  width: 100%;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.cp-open-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(124, 58, 237, 0.4);
+}
+
+.cp-open-btn:active {
+  transform: translateY(-1px);
+}
+
+/* ===== ERROR STATES ===== */
+.cp-error-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.cp-error-container {
+  background: white;
+  padding: 48px;
+  border-radius: var(--cp-radius);
+  text-align: center;
+  box-shadow: var(--cp-shadow-lg);
+  max-width: 500px;
+  width: 90%;
+}
+
+.cp-error-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  justify-content: center;
+}
+
+.cp-retry-btn,
+.cp-back-btn-error {
+  padding: 14px 32px;
+  border-radius: 12px;
+  border: 0;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cp-retry-btn {
+  background: linear-gradient(135deg, var(--cp-accent), var(--cp-accent-2));
+  color: white;
+}
+
+.cp-back-btn-error {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+/* ===== SKELETON LOADING ===== */
+.cp-skeleton {
+  background: linear-gradient(90deg, #f1f5f9 25%, #f8fafc 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: cp-shimmer 1.5s infinite;
+  border-radius: 12px;
+}
+
+@keyframes cp-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1200px) {
+  .cp-container {
+    padding: 24px;
+  }
+  
+  .cp-main {
+    gap: 24px;
+  }
+  
+  .cp-sidebar {
+    width: 340px;
+  }
+}
+
+@media (max-width: 992px) {
+  .cp-main {
+    flex-direction: column;
+  }
+  
+  .cp-sidebar {
+    width: 100%;
+  }
+  
+  .cp-player-section {
+    padding: 24px;
+  }
+  
+  .cp-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cp-container {
+    padding: 16px;
+  }
+  
+  .cp-header {
+    padding: 20px;
+  }
+  
+  .cp-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .cp-fav-btn {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .cp-player-section {
+    padding: 20px;
+  }
+  
+  .cp-video-wrapper video,
+  .cp-video-wrapper .plyr {
+    min-height: 350px;
+  }
+  
+  .cp-pdf-wrapper {
+    height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cp-title {
+    font-size: 24px;
+  }
+  
+  .cp-stats {
+    flex-direction: column;
+  }
+  
+  .cp-lesson-header {
+    padding: 16px;
+  }
+  
+  .cp-lesson-number {
+    min-width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  
+  .cp-video-wrapper video,
+  .cp-video-wrapper .plyr {
+    min-height: 250px;
+  }
+  
+  .cp-pdf-wrapper {
+    height: 300px;
+  }
+}
+
+/* ===== UTILITY CLASSES ===== */
+.cp-glass {
+  background: var(--cp-glass);
+  backdrop-filter: blur(10px);
+}
+
+.cp-gradient-text {
+  background: linear-gradient(135deg, var(--cp-accent), var(--cp-accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cp-shadow-sm {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.cp-shadow-lg {
+  box-shadow: var(--cp-shadow-lg);
+}
+.cp-radius-md {
+  border-radius: 12px;
+}
+.cp-content-display,.cp-content-box {
+  border-radius: var(--cp-radius);
+}/* ===== إصلاحات أساسية للهواتف ===== */
+@media (max-width: 995px) {
+  /* إصلاحات الحاوية العامة */
+  .cp-container {
+    padding: 10px !important;
+    min-height: auto !important;
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* إصلاح الهيدر والعنوان */
+  .cp-header {
+    padding: 12px 14px !important;
+    margin-bottom: 16px !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+  
+  .cp-title-row {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 12px !important;
+    width: 100% !important;
+    flex-wrap: nowrap !important;
+  }
+  
+  .cp-title {
+    font-size: 18px !important;
+    line-height: 1.3 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+  
+  .cp-fav-btn {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    flex-shrink: 0 !important;
+    margin-right: 8px !important;
+  }
+  
+  .cp-fav-btn i {
+    font-size: 16px !important;
+  }
+  
+  /* إصلاح معلومات المعلم والإحصائيات */
+  .cp-instructor {
+    padding: 6px 10px !important;
+    font-size: 13px !important;
+    margin-bottom: 8px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  .cp-stats {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+    width: 100% !important;
+  }
+  
+  .cp-stat-item {
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+    flex: 1 !important;
+    min-width: calc(50% - 3px) !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+  
+  /* إصلاح الهيكل الرئيسي */
+  .cp-main {
+    flex-direction: column !important;
+    gap: 16px !important;
+    width: 100% !important;
+  }
+  
+  .cp-content-wrapper {
+    width: 100% !important;
+    order: 1 !important;
+  }
+  
+  .cp-sidebar {
+    width: 100% !important;
+    order: 2 !important;
+  }
+  
+  /* إصلاح قسم المشغل */
+  .cp-player-section {
+    padding: 12px !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin-bottom: 0 !important;
+  }
+  
+  .cp-video-wrapper {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 200px !important;
+    max-height: 300px !important;
+    border-radius: 8px !important;
+    margin-bottom: 12px !important;
+  }
+  
+  .cp-video-wrapper video,
+  .cp-video-wrapper .plyr {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 200px !important;
+    max-height: 300px !important;
+    border-radius: 8px !important;
+  }
+  
+  /* إصلاح قسم الدروس */
+  .cp-lessons-card {
+    padding: 14px !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  .cp-lesson-counter {
+    padding-bottom: 10px !important;
+    margin-bottom: 12px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+  }
+  
+  .cp-lesson-counter span:first-child {
+    font-size: 16px !important;
+    width: 100% !important;
+  }
+  
+  .cp-lesson-counter span:last-child {
+    font-size: 12px !important;
+    padding: 4px 10px !important;
+    align-self: flex-start !important;
+  }
+  
+  /* إصلاح قائمة الدروس */
+  .cp-lessons-list {
+    max-height: 350px !important;
+    padding-right: 4px !important;
+  }
+  
+  .cp-lesson-item {
+    border-radius: 10px !important;
+    margin-bottom: 8px !important;
+    width: 100% !important;
+  }
+  
+  .cp-lesson-header {
+    padding: 12px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+  }
+  
+  .cp-lesson-header-content {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+  
+  .cp-lesson-number {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    flex-shrink: 0 !important;
+    font-size: 14px !important;
+    border-radius: 8px !important;
+  }
+  
+  .cp-lesson-info {
+    flex: 1 !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+  
+  .cp-lesson-title {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    margin: 0 0 4px 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+    width: 100% !important;
+  }
+  
+  .cp-free-badge,
+  .cp-quiz-label {
+    font-size: 10px !important;
+    padding: 3px 6px !important;
+    border-radius: 10px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+  
+  .cp-lesson-meta {
+    font-size: 11px !important;
+    margin: 0 !important;
+    display: flex !important;
+    gap: 8px !important;
+    flex-wrap: wrap !important;
+    color: #666 !important;
+  }
+  
+  .cp-lesson-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    flex-shrink: 0 !important;
+    margin-right: auto !important;
+    margin-left: 8px !important;
+  }
+  
+  /* إصلاح الدروس الفرعية */
+  .cp-lesson-content {
+    padding: 0 12px 12px 12px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  .cp-sub-lessons {
+    gap: 6px !important;
+  }
+  
+  .cp-sub-lesson {
+    padding: 8px 10px !important;
+    border-radius: 8px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  .cp-sub-info {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+  
+  .cp-sub-icon {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    font-size: 12px !important;
+    border-radius: 6px !important;
+  }
+  
+  .cp-quiz-mini {
+    font-size: 8px !important;
+    padding: 1px 4px !important;
+    top: -4px !important;
+    right: -4px !important;
+  }
+  
+  .cp-sub-name {
+    font-size: 13px !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  
+  .cp-sub-meta {
+    font-size: 11px !important;
+    color: #666 !important;
+  }
+  
+  /* إصلاح التقدم */
+  .cp-progress-section {
+    padding: 12px !important;
+    margin-top: 12px !important;
+    border-radius: 10px !important;
+  }
+  
+  .cp-progress-info {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+  }
+  
+  .cp-progress-info span:first-child {
+    font-size: 14px !important;
+  }
+  
+  .cp-progress-info span:last-child {
+    font-size: 18px !important;
+  }
+  
+  /* إصلاح بطاقة المعلم */
+  .cp-teacher-card {
+    padding: 12px !important;
+    border-radius: 10px !important;
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+  
+  .cp-teacher-avatar {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 10px !important;
+    font-size: 20px !important;
+  }
+  
+  .cp-teacher-name {
+    font-size: 16px !important;
+  }
+  
+  .cp-teacher-label {
+    font-size: 11px !important;
+  }
+  
+  /* إصلاح الأزرار */
+  .cp-open-btn {
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+    border-radius: 10px !important;
+    margin-top: 12px !important;
+    width: 100% !important;
+  }
+  
+  .cp-back-btn {
+    padding: 10px 14px !important;
+    font-size: 13px !important;
+    margin-bottom: 16px !important;
+  }
+  
+  /* منع التمديد الأفقي */
+  * {
+    max-width: 100vw !important;
+  }
+  
+  body, html {
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+}
+
+/* ===== تحسينات للأجهزة الصغيرة جدًا ===== */
+@media (max-width: 360px) {
+  .cp-container {
+    padding: 8px !important;
+  }
+  
+  .cp-title {
+    font-size: 16px !important;
+  }
+  
+  .cp-lesson-title {
+    font-size: 13px !important;
+  }
+  
+  .cp-lesson-meta {
+    font-size: 10px !important;
+  }
+  
+  .cp-stat-item {
+    min-width: 100% !important;
+    font-size: 11px !important;
+  }
+  
+  .cp-video-wrapper video,
+  .cp-video-wrapper .plyr {
+    min-height: 180px !important;
+    max-height: 250px !important;
+  }
+}
+
+/* ===== تحسينات للأيفون ===== */
+@supports (-webkit-touch-callout: none) {
+  .cp-container {
+    padding-bottom: 20px !important;
+  }
+  
+  .cp-video-wrapper {
+    -webkit-overflow-scrolling: touch !important;
+  }
+  
+  .cp-lessons-list {
+    -webkit-overflow-scrolling: touch !important;
+  }
+}
+
+/* ===== إصلاح مشاكل التمرير ===== */
+@media (max-width: 768px) {
+  .cp-lessons-list::-webkit-scrollbar {
+    width: 3px !important;
+  }
+  
+  /* تحسين لمس العناصر */
+  button, 
+  .cp-lesson-header,
+  .cp-sub-lesson {
+    cursor: pointer !important;
+    -webkit-tap-highlight-color: transparent !important;
+    min-height: 44px !important;
+  }
+  
+  /* إزالة التحويم على الهواتف */
+  .cp-lesson-item:hover,
+  .cp-sub-lesson:hover,
+  .cp-stat-item:hover,
+  .cp-teacher-card:hover {
+    transform: none !important;
+  }
+}
+
+/* ===== إصلاحات للأندرويد ===== */
+@media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 0) {
+  .cp-container {
+    -webkit-text-size-adjust: 100% !important;
+  }
+  
+  select,
+  textarea,
+  input {
+    font-size: 16px !important;
+  }
+}
+

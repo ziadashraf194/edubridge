@@ -1,0 +1,97 @@
+.NotFound {
+  height: 100vh;
+  width: 100%;
+  padding-top: 80px;
+  background: linear-gradient(135deg, #6356e5 0%, #7c6fff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: "Alexandria", sans-serif;
+  direction: rtl;
+  color: white;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 1100px;
+  padding: 0 2rem;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  animation: fadeInUp 0.8s ease;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.8s ease 0.2s backwards;
+}
+
+.back-home {
+  background: white;
+  color: #6356e5;
+  padding: 0.8rem 2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.back-home:hover {
+  background: #f1f1ff;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 450px;
+  animation: floatImage 3s ease-in-out infinite;
+}
+.image-404  {
+margin-top: 0%;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatImage {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* 🎯 الموبايل */
+@media (max-width: 800px) {
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-image {
+    display: none;
+  }
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+  .hero-text p {
+    font-size: 1.1rem;
+  }
+}

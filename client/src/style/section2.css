@@ -1,0 +1,94 @@
+/* base reset */
+* { box-sizing: border-box; margin:0; padding:0; }
+.section2 { overflow-x: hidden; /* مهم: يمنع تجاوز السلايدر للعرض */ 
+  width:100%; min-height:100vh;
+  display:flex; align-items:center; justify-content:center;
+  padding:4rem 5%; background: linear-gradient(250deg,#1a1a2e,#16213e); color:#fff; font-family:"Alexandria",sans-serif;
+}
+
+/* container */
+.section2-container {
+  width:100%; max-width:1200px;
+  display:flex; gap:40px; align-items:flex-start; justify-content:space-between;
+  flex-wrap:wrap; position:relative;flex-direction: row-reverse;
+}
+
+/* text */
+.section2-text { flex:1; text-align:center; direction:rtl; min-width:220px;margin-top: 10%; }
+.main-title { font-size:2.6rem; margin-bottom:8px;text-align: center !important; }
+.title-highlight { color:#7c6ff0; }
+.description { font-size:1rem; color:rgba(255,255,255,0.9);margin-top: 20px;text-align: center !important; }
+
+/* slider wrapper */
+.slider-wrapper { flex:1.1; min-width:280px; max-width:640px; display:flex; flex-direction:column; align-items:center; }
+
+/* slider box */
+.slider {
+  width:100%; height:360px; border-radius:16px; overflow:hidden; position:relative;
+  background:#0b1220; box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* slides container: single transform applied here */
+.slides { display:flex; height:100%; transition: transform 0.6s cubic-bezier(.22,.9,.46,1); will-change:transform; }
+
+/* each slide fixed 100% of slider width */
+.slide { flex:0 0 100%; height:100%; position:relative; }
+
+/* image area */
+.image-wrapper { width:100%; height:100%; position:relative; overflow:hidden; }
+.image-wrapper img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .45s ease; }
+.image-wrapper:hover img { transform:scale(1.06); }
+
+.overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.86), transparent); }
+
+/* info overlay inside slide */
+.slide-info {
+  position:absolute; left:0; right:0; bottom:14px; text-align:center; padding:0 12px; color:#fff;
+}
+.slide-info h3 { font-size:1.2rem; margin-bottom:6px; line-height:1.2; }
+.short-desc { font-size:0.9rem; opacity:0.95; max-height:36px; overflow:hidden; text-overflow:ellipsis; }
+.dates { display:flex; gap:8px; justify-content:center; font-size:0.82rem; opacity:0.85; margin-top:6px; }
+.teacher { margin-top:6px; font-weight:600; font-size:0.9rem; }
+.price { margin-top:8px; color:#7c6ff0; font-weight:700; }
+
+/* buttons */
+.buttons { margin-top:10px; display:flex; gap:8px; justify-content:center; flex-wrap:wrap; }
+.btn-primary, .btn-secondary {
+  padding:6px 12px; border-radius:8px; border:none; cursor:pointer; font-size:0.85rem;
+}
+.btn-primary { background:#7c6ff0; color:#fff; }
+.btn-secondary { background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.12); }
+
+/* nav buttons (inside slider) */
+.nav-btn {
+  position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.45);
+  color:#fff; border:none; width:40px; height:40px; border-radius:50%; font-size:22px; display:flex; align-items:center; justify-content:center;
+  cursor:pointer;
+}
+.nav-btn:hover { background:#000000b3; }
+.prev { left:10px; }
+.next { right:10px; }
+
+/* dots */
+.slider-dots { margin-top:12px; display:flex; gap:8px; justify-content:center; align-items:center; }
+.dot { width:10px; height:10px; background:#7c7c7c; border-radius:50%; cursor:pointer; transition:all .25s ease; border:none; }
+.dot.active { width:26px; background:#7c6ff0; border-radius:6px; }
+
+/* responsive tweaks */
+@media (max-width: 900px) {
+  .section2-container { gap:24px; }
+  .slider { height:300px; }
+  .main-title { font-size:2rem; }
+}
+
+@media (max-width: 600px) {
+  .section2 { padding:2rem 1.5rem; }
+  .section2-container { flex-direction:column-reverse; align-items:center; }
+  .section2-text { text-align:center; order:2; margin-top: 0; }
+  .slider-wrapper { order:1; width:100%; max-width:520px; min-width:0; }
+  .slider { height:230px; border-radius:12px; }
+  .slide-info h3 { font-size:1rem; }
+  .short-desc { font-size:0.8rem; max-height:42px; }
+  .nav-btn { width:34px; height:34px; font-size:18px; }
+  .dot.active { width:20px; }
+}

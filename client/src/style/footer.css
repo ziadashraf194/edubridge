@@ -1,0 +1,48 @@
+footer{
+     background-color: #333;
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     align-items: center;
+     padding: 20px;
+     height: 300px;
+     z-index: 1000000;
+     overflow: hidden;
+}
+.media-icons{
+    display: flex;
+    justify-content: center;
+
+}
+.media-icons a i{
+color: #6356e5;
+margin: 10px;
+ 
+}
+.media-icons a .fa-facebook:hover{
+color: rgb(0, 72, 255);
+transition: .5s;
+transform: scale(1.1);
+}
+.media-icons a .fa-instagram:hover{
+color: rgb(255, 67, 67);
+transition: .5s;
+transform: scale(1.1);
+}
+.media-icons a .fa-whatsapp:hover{
+color: rgb(0, 255, 102);
+transition: .5s;
+transform: scale(1.1);
+}
+footer svg{
+     height: 100px;
+ align-self: center;
+} 
+footer p{
+ display: flex;
+ position: absolute;
+font-size: 20px;
+font-weight: bolder;
+color: aliceblue;
+padding-top: 10px;
+} 

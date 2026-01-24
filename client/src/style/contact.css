@@ -1,0 +1,465 @@
+/* Contact Section */
+.contact-section {
+    padding: 5rem 5%;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: white;
+    direction: rtl;
+    min-height: 100vh;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* العنوان */
+.contact-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.contact-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+    font-weight: normal;
+}
+
+.contact-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* المحتوى الرئيسي */
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+@media (max-width: 900px) {
+    .contact-content {
+       display: flex;
+         flex-direction: column-reverse;
+
+    }
+}
+
+/* معلومات الاتصال */
+.contact-info .info-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2.5rem;
+    height: fit-content;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #7c6ff0;
+}
+
+.info-card > p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 2rem;
+}
+
+/* طرق التواصل */
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.contact-method {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+    border: 1px solid transparent;
+}
+
+.contact-method:hover {
+    background: rgba(124, 111, 240, 0.1);
+    transform: translateX(-5px);
+    border-color: rgba(124, 111, 240, 0.3);
+}
+
+.method-icon {
+    font-size: 1.8rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(124, 111, 240, 0.1);
+    border-radius: 10px;
+    color: #7c6ff0;
+}
+
+.method-details h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    color: white;
+}
+
+.method-details p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+}
+
+/* وسائل التواصل الاجتماعي */
+.social-section {
+    margin-top: 2rem;
+}
+
+.social-section h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.social-link:hover {
+    transform: translateY(-5px);
+}
+
+.facebook:hover { background: #1877F2; }
+.twitter:hover { background: #1DA1F2; }
+.linkedin:hover { background: #0077B5; }
+.instagram:hover { background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D); }
+.youtube:hover { background: #FF0000; }
+
+/* نموذج الاتصال */
+.contact-form-section .form-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #7c6ff0;
+}
+
+.form-card > p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 2rem;
+}
+
+/* حالة الإرسال */
+.submit-status {
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.submit-status.success {
+    background: rgba(76, 175, 80, 0.1);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    color: #4CAF50;
+}
+
+.submit-status.error {
+    background: rgba(244, 67, 54, 0.1);
+    border: 1px solid rgba(244, 67, 54, 0.3);
+    color: #F44336;
+}
+
+/* النموذج */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.8rem 1rem;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #7c6ff0;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.form-group select {
+    cursor: pointer;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* أزرار النموذج */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.submit-btn,
+.cancel-btn {
+    padding: 0.9rem 2rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    flex: 1;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #7c6ff0 0%, #6a5cf0 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.submit-btn:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(124, 111, 240, 0.3);
+}
+
+.submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.cancel-btn {
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cancel-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.spinner {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* قسم الأسئلة الشائعة */
+.faq-preview {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.faq-preview h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: #7c6ff0;
+    text-align: center;
+}
+
+.faq-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.faq-item h4 {
+    color: white;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.faq-item p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Font Awesome icons styling */
+.contact-title-icon {
+  margin-left: 15px;
+  font-size: 1.5rem;
+  color: #4a6cf7;
+}
+
+.info-card h3 i,
+.form-card h3 i,
+.faq-preview h3 i,
+.faq-item h4 i {
+  margin-left: 10px;
+  color: #4a6cf7;
+}
+
+.contact-method .method-icon i {
+  font-size: 1.5rem;
+  color: #4a6cf7;
+}
+
+.social-link i {
+  font-size: 1.2rem;
+}
+
+.form-group label i {
+  margin-left: 8px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.submit-status i {
+  margin-left: 10px;
+}
+
+.submit-status.success i {
+  color: #28a745;
+}
+
+.submit-status.error i {
+  color: #dc3545;
+}
+
+/* Select wrapper with icon */
+.select-wrapper {
+  position: relative;
+}
+
+.select-arrow {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  pointer-events: none;
+}
+
+.select-wrapper select {
+  padding-left: 40px;
+  width: 100%;
+}
+
+.select-wrapper select option {
+ background-color: #0f172a !important;
+}
+
+/* Button icons */
+.submit-btn i,
+.cancel-btn i {
+  margin-left: 8px;
+}
+
+/* Spinner animation */
+.fa-spinner {
+  animation: fa-spin 1s infinite linear;
+}
+
+@keyframes fa-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Social links colors */
+.social-link.facebook i { color: #1877F2; }
+.social-link.twitter i { color: #1DA1F2; }
+.social-link.linkedin i { color: #0077B5; }
+.social-link.instagram i { color: #E4405F; }
+.social-link.youtube i { color: #FF0000; }
+
+/* Hover effects for social links */
+.social-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.social-link.facebook:hover { background-color: #1877F2; }
+.social-link.twitter:hover { background-color: #1DA1F2; }
+.social-link.linkedin:hover { background-color: #0077B5; }
+.social-link.instagram:hover { background-color: #E4405F; }
+.social-link.youtube:hover { background-color: #FF0000; }
+
+.social-link:hover i {
+  color: white !important;
+}
