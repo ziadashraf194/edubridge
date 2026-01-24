@@ -1,0 +1,32 @@
+2026-01-19T13:49:40.314Z [INFO] Fetching quiz details {"route":"/quiz/:id","method":"GET","quizId":"696bd43a6839cd94a89def91","teacherId":"690a20fc8bfd5d02a02018bb","isSubLesson":"true","subLessonId":"696d6b3fa74d8e364fe059a7","teacherName":"Ziad Ashraf"}
+2026-01-19T13:49:40.344Z [INFO] Sublesson quiz fetched successfully {"route":"/quiz/:id","method":"GET","quizId":"696bd43a6839cd94a89def91","teacherId":"690a20fc8bfd5d02a02018bb","isSubLesson":"true","subLessonId":"696d6b3fa74d8e364fe059a7","teacherName":"Ziad Ashraf","quizTitle":"اختبار ","questionCount":1}
+2026-01-19T13:49:40.347Z [REQUEST] GET /quiz/696bd43a6839cd94a89def91?isSubLesson=true&subLessonId=696d6b3fa74d8e364fe059a7 - Status: 200 - Duration: 47ms
+2026-01-19T13:49:40.351Z [INFO] Fetching quiz details {"route":"/quiz/:id","method":"GET","quizId":"696bd43a6839cd94a89def91","teacherId":"690a20fc8bfd5d02a02018bb","isSubLesson":"true","subLessonId":"696d6b3fa74d8e364fe059a7","teacherName":"Ziad Ashraf"}
+2026-01-19T13:49:40.359Z [INFO] Sublesson quiz fetched successfully {"route":"/quiz/:id","method":"GET","quizId":"696bd43a6839cd94a89def91","teacherId":"690a20fc8bfd5d02a02018bb","isSubLesson":"true","subLessonId":"696d6b3fa74d8e364fe059a7","teacherName":"Ziad Ashraf","quizTitle":"اختبار ","questionCount":1}
+2026-01-19T13:49:40.361Z [REQUEST] GET /quiz/696bd43a6839cd94a89def91?isSubLesson=true&subLessonId=696d6b3fa74d8e364fe059a7 - Status: 304 - Duration: 13ms
+2026-01-19T13:49:44.544Z [INFO] Fetching teacher quizzes {"route":"/quiz","method":"GET","teacherId":"690a20fc8bfd5d02a02018bb","teacherName":"Ziad Ashraf"}
+2026-01-19T13:49:44.569Z [INFO] Fetching teacher quizzes {"route":"/quiz","method":"GET","teacherId":"690a20fc8bfd5d02a02018bb","teacherName":"Ziad Ashraf"}
+2026-01-19T13:49:44.577Z [INFO] Quizzes fetched successfully {"route":"/quiz","method":"GET","teacherId":"690a20fc8bfd5d02a02018bb","teacherName":"Ziad Ashraf","totalQuizzes":2,"mainQuizzes":1,"sublessonQuizzes":1}
+2026-01-19T13:49:44.580Z [REQUEST] GET /quiz - Status: 200 - Duration: 47ms
+2026-01-19T13:49:44.591Z [INFO] Quizzes fetched successfully {"route":"/quiz","method":"GET","teacherId":"690a20fc8bfd5d02a02018bb","teacherName":"Ziad Ashraf","totalQuizzes":2,"mainQuizzes":1,"sublessonQuizzes":1}
+2026-01-19T13:49:44.593Z [REQUEST] GET /quiz - Status: 200 - Duration: 45ms
+2026-01-19T13:49:47.334Z [INFO] Updating quiz {"route":"/quiz/:id","method":"PUT","quizId":"696bd43a6839cd94a89def91","teacherId":"690a20fc8bfd5d02a02018bb","isSubLesson":true,"subLessonId":"696d6b3fa74d8e364fe059a7","updateFields":["isActive"],"teacherName":"Ziad Ashraf"}
+2026-01-19T13:49:47.355Z [AUDIT] SUBLESSON_QUIZ_UPDATED - User: Ziad Ashraf (690a20fc8bfd5d02a02018bb) - Resource: {"type":"sublesson_quiz","lessonId":"696bd43a6839cd94a89def91","subLessonId":"696d6b3fa74d8e364fe059a7","updatedFields":["quiz"]} - Details: {}
+2026-01-19T13:49:47.356Z [INFO] Sublesson quiz updated successfully {"route":"/quiz/:id","method":"PUT","quizId":"696bd43a6839cd94a89def91","teacherId":"690a20fc8bfd5d02a02018bb","isSubLesson":true,"subLessonId":"696d6b3fa74d8e364fe059a7","updateFields":["isActive"],"teacherName":"Ziad Ashraf","quizTitle":"اختبار ","questionCount":1}
+2026-01-19T13:49:47.357Z [REQUEST] PUT /quiz/696bd43a6839cd94a89def91 - Status: 200 - Duration: 28ms
+2026-01-19T13:49:48.354Z [INFO] Updating quiz {"route":"/quiz/:id","method":"PUT","quizId":"696e34287733857ac7b00e55","teacherId":"690a20fc8bfd5d02a02018bb","isSubLesson":false,"updateFields":["isActive"],"teacherName":"Ziad Ashraf"}
+2026-01-19T13:49:48.361Z [AUDIT] MAIN_QUIZ_UPDATED - User: Ziad Ashraf (690a20fc8bfd5d02a02018bb) - Resource: {"type":"main_quiz","lessonId":"696e34287733857ac7b00e55","updatedFields":["quiz"]} - Details: {}
+2026-01-19T13:49:48.362Z [INFO] Main quiz updated successfully {"route":"/quiz/:id","method":"PUT","quizId":"696e34287733857ac7b00e55","teacherId":"690a20fc8bfd5d02a02018bb","isSubLesson":false,"updateFields":["isActive"],"teacherName":"Ziad Ashraf","quizTitle":"trytuyiuoi","questionCount":1,"typeVerified":true}
+2026-01-19T13:49:48.364Z [REQUEST] PUT /quiz/696e34287733857ac7b00e55 - Status: 200 - Duration: 12ms
+2026-01-19T13:49:50.805Z [INFO] Fetching teacher quizzes {"route":"/quiz","method":"GET","teacherId":"690a20fc8bfd5d02a02018bb","teacherName":"Ziad Ashraf"}
+2026-01-19T13:49:50.816Z [INFO] Fetching teacher quizzes {"route":"/quiz","method":"GET","teacherId":"690a20fc8bfd5d02a02018bb","teacherName":"Ziad Ashraf"}
+2026-01-19T13:49:50.843Z [INFO] Quizzes fetched successfully {"route":"/quiz","method":"GET","teacherId":"690a20fc8bfd5d02a02018bb","teacherName":"Ziad Ashraf","totalQuizzes":2,"mainQuizzes":1,"sublessonQuizzes":1}
+2026-01-19T13:49:50.846Z [REQUEST] GET /quiz - Status: 200 - Duration: 51ms
+2026-01-19T13:49:50.853Z [INFO] Quizzes fetched successfully {"route":"/quiz","method":"GET","teacherId":"690a20fc8bfd5d02a02018bb","teacherName":"Ziad Ashraf","totalQuizzes":2,"mainQuizzes":1,"sublessonQuizzes":1}
+2026-01-19T13:49:50.855Z [REQUEST] GET /quiz - Status: 200 - Duration: 56ms
+2026-01-19T13:51:48.154Z [INFO] Fetching teacher quizzes {"route":"/quiz","method":"GET","teacherId":"690a20fc8bfd5d02a02018bb","teacherName":"Ziad Ashraf"}
+2026-01-19T13:51:48.206Z [INFO] Fetching teacher quizzes {"route":"/quiz","method":"GET","teacherId":"690a20fc8bfd5d02a02018bb","teacherName":"Ziad Ashraf"}
+2026-01-19T13:51:48.235Z [INFO] Quizzes fetched successfully {"route":"/quiz","method":"GET","teacherId":"690a20fc8bfd5d02a02018bb","teacherName":"Ziad Ashraf","totalQuizzes":2,"mainQuizzes":1,"sublessonQuizzes":1}
+2026-01-19T13:51:48.248Z [REQUEST] GET /quiz - Status: 200 - Duration: 101ms
+2026-01-19T13:51:48.273Z [INFO] Quizzes fetched successfully {"route":"/quiz","method":"GET","teacherId":"690a20fc8bfd5d02a02018bb","teacherName":"Ziad Ashraf","totalQuizzes":2,"mainQuizzes":1,"sublessonQuizzes":1}
+2026-01-19T13:51:48.275Z [REQUEST] GET /quiz - Status: 200 - Duration: 114ms
